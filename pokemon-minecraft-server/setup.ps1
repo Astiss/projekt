@@ -97,6 +97,8 @@ $propsPath = Join-Path $ServerDir "server.properties"
 if (-not (Test-Path $propsPath)) { New-Item -ItemType File -Path $propsPath | Out-Null }
 $props = @{
     "online-mode"        = "false"   # <- pozwala grac bez konta premium (TLauncher itp.)
+    "enforce-secure-profile" = "false"  # <- wylacza wymog podpisanych profili Mojang (potrzebne dla non-premium na nowszych wersjach)
+    "white-list"         = "false"   # <- wylacza whiteliste, kazdy moze wejsc
     "motd"               = "Pokemon Server (Cobblemon) - non-premium OK"
     "difficulty"         = "normal"
     "gamemode"            = "survival"

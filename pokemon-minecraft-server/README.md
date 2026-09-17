@@ -74,9 +74,26 @@ Domyslnie serwer dziala tylko w Twojej sieci lokalnej. Zeby znajomi mogli dolacz
 - `fabric-server-launch.jar` - launcher serwera Fabric
 - `server.jar` - oryginalny jar Minecrafta (Mojang)
 - `mods/` - Cobblemon + Fabric API
-- `server.properties` - konfiguracja (kluczowe: `online-mode=false`)
+- `server.properties` - konfiguracja (kluczowe: `online-mode=false`, `enforce-secure-profile=false`, `white-list=false`)
 - `eula.txt` - akceptacja EULA Minecrafta
 - `start.bat` / `start.sh` - uruchomienie serwera
+
+## Wylaczenie whitelisty / logowania na juz dzialajacym serwerze
+
+Jesli serwer juz stoi i chcesz recznie wylaczyc whiteliste oraz wymog logowania (bez
+ponownego uruchamiania `setup.ps1`):
+
+1. W konsoli serwera wpisz `whitelist off` (od razu wylacza bez restartu).
+2. Zatrzymaj serwer (`stop`), otworz `server.properties` i ustaw:
+   ```
+   white-list=false
+   online-mode=false
+   enforce-secure-profile=false
+   ```
+3. Uruchom serwer ponownie (`start.bat` / `start.sh`).
+
+Od tej pory kazdy gracz z kontem non-premium (np. TLauncher) moze wejsc bez zapraszania go
+na liste.
 
 ## Konfiguracja Cobblemon
 

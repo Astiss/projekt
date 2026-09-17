@@ -63,6 +63,8 @@ PROPS="server.properties"
 touch "$PROPS"
 declare -A DESIRED=(
     ["online-mode"]="false"
+    ["enforce-secure-profile"]="false"
+    ["white-list"]="false"
     ["motd"]="Pokemon Server (Cobblemon) - non-premium OK"
     ["difficulty"]="normal"
     ["gamemode"]="survival"
